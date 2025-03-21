@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css">
+    <title>Générateur</title>
+</head>
+<body>
+    <h1>Génération de feuilles d'émargement</h1>
+    
+    <form action="/" method="POST">
+        <label for="promotion_id">Veuillez choisir une promotion</label>
+        <select name="promotion_id" id="promotion_id">
+            {% for promotion in promotions %}
+                <option value="{{ promotion[0] }}">{{ promotion[1] }}</option>
+            {% endfor %}
+        </select><br>
+
+        <label for="start_date">Veuillez choisir une date</label>
+        <input type="date" name="start_date" id="start_date" required><br>
+
+        <input type="submit" value="Générer la feuille d'émargement">
+    </form>
+
+    {% if filename %}
+        <h2>Feuille d'émargement générée avec succès !</h2>
+        <a href="{{ url_for('download', filename=filename) }}">Télécharger la feuille d'émargement</a>
+    {% endif %}
+</body>
+</html>
