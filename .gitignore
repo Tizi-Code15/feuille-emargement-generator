@@ -1,0 +1,33 @@
+# Fichier .env avec infos sensibles
+.env
+
+# Dossiers Python à ignorer
+__pycache__/
+*.py[cod]
+
+# Fichiers temporaires ou de cache
+*.log
+*.tmp
+*.bak
+
+# Fichiers Excel générés
+generated_files/*.xlsx
+generated_files/*.xls
+
+# Fichiers temporaires Excel (ex : ~classeur.xlsx)
+~$*.xlsx
+
+# Historique de fichiers (inutile pour Git)
+.history/
+
+# Fichiers système (Windows / macOS)
+Thumbs.db
+.DS_Store
+
+# Dossiers des IDE (Visual Studio Code, PyCharm, etc.)
+.vscode/
+.idea/
+
+# Exclure d’autres anciens fichiers générés manuellement
+*.sqlite3
+*.db
